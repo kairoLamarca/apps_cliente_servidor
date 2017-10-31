@@ -2,7 +2,18 @@ const http = require('http');
 
 let buffer_corpo_response = [];
 
-http.get('http://localhost', (res) => {
+const opcoes = {
+    hotname: 'localhost',
+    port: 80,
+    pat: '/',
+    headers: {
+        'Accept': 'application/json'
+        //'Accept': 'text/html'
+    }
+};
+
+//http.get('http://localhost', (res) => {
+http.get(opcoes, (res) => {
 
     //utilizando data, vai pegando cada pedaço da pagina que vai renderizando
     res.on('data', (pedaco) => {
