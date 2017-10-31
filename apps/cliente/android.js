@@ -33,6 +33,7 @@ let req = http.request(opcoes, (res) => {//cria a requisição com parametros
     res.on('end', () => {
         let corpo_response = Buffer.concat(buffer_corpo_response).toString();
         console.log(corpo_response);
+        console.log(res.statusCode);
     });
 
     // res.on('error', () => {

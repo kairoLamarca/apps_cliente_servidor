@@ -21,7 +21,7 @@ app.set('views', './app/views');
 app.use(express.static('./app/public'));
 
 /* configurar o middleware body-parser */
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());//para o bodyParser aceitar json
 
 /* configurar o middleware express-validator */
@@ -33,6 +33,11 @@ consign()
 	.then('app/models')
 	.then('app/controllers')
 	.into(app);
+
+/* middleware que configura páginas de status */
+app.use((req, res, next) => {
+	next();
+})
 
 /* exportar o objeto app */
 module.exports = app;
