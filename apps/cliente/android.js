@@ -6,10 +6,10 @@ const opcoes = {
     pat: '/',
     method: 'post',
     headers: {
-        'Accept': 'application/json',
+        'Accept': 'application/json',//forma que vai receber as informações
         //'Accept': 'text/html',
         //'Content-type': 'application/x-www-form-urlencoded'
-        'Content-type': 'application/json'
+        'Content-type': 'application/json'//forma que vai enviar as informações
     }
 };
 
