@@ -36,6 +36,14 @@ consign()
 
 /* middleware que configura páginas de status */
 app.use((req, res, next) => {
+	//res.status(404).send('Página não encontrada');//Envia isso quando der status 404
+	res.status(404).render('errors/404');//Envia isso quando der status 404
+	next();
+})
+
+/* middleware que configura msg de erro internos*/
+app.use((err, req, res, next) => {	
+	res.status(500).render('errors/500');
 	next();
 })
 

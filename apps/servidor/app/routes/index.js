@@ -12,6 +12,8 @@ module.exports = function (application) {
 				res.json(retorno);
 			}
 		})
+
+		//res.render('qualquercoisa');
 	});
 
 	application.post('/', function (req, res) {
