@@ -12,7 +12,10 @@ module.exports = function (application) {
 				res.json(retorno);
 			}
 		})
+	});
 
-		
+	application.post('/', function (req, res) {
+		let dados = req.body;
+		res.send(dados);
 	});
 }
